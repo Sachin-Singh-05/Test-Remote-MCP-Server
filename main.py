@@ -1,6 +1,7 @@
 from fastmcp import FastMCP
 from pathlib import Path
 import sqlite3
+import os
 
 # =========================
 # Paths
@@ -10,6 +11,16 @@ BASE_DIR = Path(__file__).resolve().parent
 
 DB_PATH = BASE_DIR / "expenses.db"
 CATEGORIES_PATH = BASE_DIR / "categories.json"
+
+
+# =========================
+# Database Debug Information
+# =========================
+
+print("Database path:", DB_PATH)
+print("Database exists:", DB_PATH.exists())
+print("Database writable:", os.access(DB_PATH, os.W_OK))
+print("Directory writable:", os.access(DB_PATH.parent, os.W_OK))
 
 
 # =========================
