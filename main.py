@@ -19,10 +19,14 @@ CATEGORIES_PATH = Path(__file__).resolve().parent / "categories.json"
 print("=" * 60)
 print("Expense Tracker MCP Server")
 print("=" * 60)
+
 print(f"Database path      : {DB_PATH}")
 print(f"Database exists    : {DB_PATH.exists()}")
-print(f"Database writable  : {os.access(DB_PATH, os.W_OK)}")
 print(f"Directory writable : {os.access(DB_PATH.parent, os.W_OK)}")
+
+if DB_PATH.exists():
+    print(f"Database writable  : {os.access(DB_PATH, os.W_OK)}")
+
 print("=" * 60)
 
 
